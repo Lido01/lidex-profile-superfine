@@ -13,3 +13,12 @@ I'm a passionate **[Your Role - e.g., Full-Stack Developer]** based in **[Your L
 - 💬 Ask me about **[Tech Stack you're comfortable with]**
 - 📫 How to reach me: **[Email / LinkedIn]**
 - ⚡ Fun fact: **[Interesting fact about yourself]**
+
+## 🛠️ Tech Stack
+
+### Languages
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white)
+
