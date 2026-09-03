@@ -6,10 +6,10 @@
 
 I'm a passionate **AI-Engineer** based in **Addis Ababa, Ethiopia** with **3+** years of experience building web applications. I love writing clean, efficient code and continuously learning new technologies.
 
-- 🔭 I’m currently working on **[Current Project/Company]**
-- 🌱 I’m currently learning **[Technology you're learning]**
-- 👯 I’m looking to collaborate on **[Type of projects you're interested in]**
-- 💬 Ask me about **[Tech Stack you're comfortable with]**
+- 🔭 I’m currently working on **3D Barber shopping ap**
+- 🌱 I’m currently learning **AI Engineering**
+- 👯 I’m looking to collaborate on **Automation based**
+- 💬 Ask me about **Web and mobile App building language**
 - 📫 How to reach me: **[Email / LinkedIn]**
 - ⚡ Fun fact: **[Interesting fact about yourself]**
 
