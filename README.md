@@ -1,10 +1,10 @@
-# 👋 Hi, I'm [Your Name]
+# 👋 Hi, I'm Lidetu
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=36BCF7&width=435&lines=Software+Developer;Problem+Solver;Lifelong+Learner;Open+Source+Enthusiast)](https://git.io/typing-svg)
 
 ## 🚀 About Me
 
-I'm a passionate **[Your Role - e.g., Full-Stack Developer]** based in **[Your Location]** with **[X]** years of experience building web applications. I love writing clean, efficient code and continuously learning new technologies.
+I'm a passionate **AI-Engineer** based in **Addis Ababa, Ethiopia** with **3+** years of experience building web applications. I love writing clean, efficient code and continuously learning new technologies.
 
 - 🔭 I’m currently working on **[Current Project/Company]**
 - 🌱 I’m currently learning **[Technology you're learning]**
