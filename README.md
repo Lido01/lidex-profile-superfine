@@ -10,7 +10,7 @@ I'm a passionate **AI-Engineer** based in **Addis Ababa, Ethiopia** with **3+** 
 - 🌱 I’m currently learning **AI Engineering**
 - 👯 I’m looking to collaborate on **Automation based**
 - 💬 Ask me about **Web and mobile App building language**
-- 📫 How to reach me: **[Email / LinkedIn]**
+- 📫 How to reach me: **lidtmariamtesfu@gmail.com**
 - ⚡ Fun fact: **[Interesting fact about yourself]**
 
 ## 🛠️ Tech Stack
