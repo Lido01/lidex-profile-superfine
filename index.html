@@ -1,12 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/lidetu-card.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lidex-profile-superfine</title>
+    <title>Lidetu — Creative Frontend & 3D WebGL Engineer (@techfocus_hub)</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              cyberDark: '#050816',
+              cyberSurface: '#0b1126',
+              cyberBorder: 'rgba(255, 255, 255, 0.08)',
+              neonCyan: '#00f0ff',
+              neonIndigo: '#6366f1',
+              neonPurple: '#a855f7',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 20s linear infinite',
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-[#050816] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 min-h-screen overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
