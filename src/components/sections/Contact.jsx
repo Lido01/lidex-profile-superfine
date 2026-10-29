@@ -26,17 +26,11 @@ export default function Contact() {
     <section id="dispatch" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 mb-14 font-mono">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
           <div>
-            <div className="text-cyan-400 text-xs tracking-widest mb-1">
-              [ 07 // DIRECT DISPATCH & INQUIRIES ]
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white font-sans">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-cyan-400 text-xs tracking-widest">
               Initialize Project Dispatch
             </h2>
-          </div>
-          <div className="text-slate-400 text-xs tracking-wider max-w-sm text-left md:text-right">
-            ENGAGE FOR BACKEND PYTHON ARCHITECTURE, AGENTIC AUTOMATION, OR ENTERPRISE API DEVELOPMENT.
           </div>
         </div>
 
@@ -44,11 +38,7 @@ export default function Contact() {
           {/* Left: Communications Channels */}
           <div className="lg:col-span-5 space-y-6 font-mono">
             <div className="p-7 sm:p-8 bg-[#050816]/95 border border-white/15 backdrop-blur-xl">
-              <div className="text-xs text-cyan-400 tracking-widest mb-4">
-                // DIRECT COMMUNICATIONS MATRIX
-              </div>
-
-              <h3 className="text-xl font-bold text-white mb-2 font-sans">
+              <h3 className="text-xl font-bold text-white mb-2 text-cyan-400 tracking-widest">
                 Real-Time Telegram &amp; GitHub
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
@@ -63,8 +53,8 @@ export default function Contact() {
                 className="block p-4 mb-3 bg-white/[0.03] hover:bg-white/[0.08] border border-cyan-500/30 text-white transition-all text-xs"
               >
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-cyan-300 font-bold">[ TELEGRAM CHANNEL ]</span>
-                  <span className="text-[10px] text-emerald-400">ACTIVE DISPATCH</span>
+                  <span className="font-bold">[ TELEGRAM CHANNEL ]</span>
+                  <span className="text-[10px] text-cyan">ACTIVE DISPATCH</span>
                 </div>
                 <div className="text-slate-400 text-[11px]">
                   {personalData.handle}
@@ -109,7 +99,7 @@ export default function Contact() {
                   Direct Inbox Address:
                 </div>
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-cyan-300 select-all truncate">
+                  <span className="select-all truncate">
                     {personalData.channels.email}
                   </span>
                   <button
@@ -127,10 +117,9 @@ export default function Contact() {
           <div className="lg:col-span-7 font-mono">
             <div className="p-7 sm:p-8 bg-[#050816]/95 border border-white/15 backdrop-blur-xl">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6 text-xs text-slate-400">
-                <span className="text-white font-bold tracking-widest">
-                  [ ARCHITECTURAL TRANSMISSION CONSOLE ]
+                <span className="text-white font-bold text-xs text-cyan-400 tracking-widest">
+                   ARCHITECTURAL TRANSMISSION CONSOLE
                 </span>
-                <span>SECURE // TLS 1.3</span>
               </div>
 
               {submitted ? (
@@ -155,7 +144,7 @@ export default function Contact() {
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="ENTER NAME"
-                        className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-cyan-400 focus:outline-none text-white font-mono placeholder:text-slate-600"
+                        className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-[white] focus:outline-none text-white font-mono placeholder:text-slate-600"
                       />
                     </div>
 
@@ -169,7 +158,7 @@ export default function Contact() {
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="user@domain.com"
-                        className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-cyan-400 focus:outline-none text-white font-mono placeholder:text-slate-600"
+                        className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-[white] focus:outline-none text-white font-mono placeholder:text-slate-600"
                       />
                     </div>
                   </div>
@@ -181,7 +170,7 @@ export default function Contact() {
                     <select
                       value={formState.type}
                       onChange={(e) => setFormState({ ...formState, type: e.target.value })}
-                      className="w-full px-4 py-3 bg-black/80 border border-white/15 focus:border-cyan-400 focus:outline-none text-white font-mono cursor-pointer"
+                      className="w-full px-4 py-3 bg-black/80 border border-white/15 focus:border-[white] focus:outline-none text-white font-mono cursor-pointer"
                     >
                       <option value="Backend Python Architecture">Backend Python Systems & Django/FastAPI</option>
                       <option value="Agentic AI Workflow">Autonomous Agentic AI & LangGraph/RAG</option>
@@ -201,13 +190,13 @@ export default function Contact() {
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       placeholder="Specify system constraints, timeline objectives, and architecture expectations..."
-                      className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-cyan-400 focus:outline-none text-white font-mono placeholder:text-slate-600 resize-none"
+                      className="w-full px-4 py-3 bg-black/60 border border-white/15 focus:border-[white] focus:outline-none text-white font-mono placeholder:text-slate-600 resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-white text-black font-bold tracking-widest hover:bg-cyan-400 hover:text-black transition-colors cursor-pointer text-xs"
+                    className="w-full py-4 bg-white text-black font-bold tracking-widest hover:transparent hover:text-black transition-colors cursor-pointer text-xs"
                   >
                     [ DISPATCH BRIEF TO LIDETU ]
                   </button>
