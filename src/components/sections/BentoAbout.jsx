@@ -6,17 +6,11 @@ export default function BentoAbout() {
     <section id="architecture" className="relative py-28 px-4 sm:px-8 z-10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 mb-14 font-mono">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
           <div>
-            <div className="text-cyan-400 text-xs tracking-widest mb-1">
-              [ 02 // TECHNICAL FOUNDATIONS & SKILLS MATRIX ]
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white font-sans">
+            <h2 className="tracking-widest text-2xl sm:text-4xl font-bold tracking-tight">
               Capabilities & Methodologies
             </h2>
-          </div>
-          <div className="text-slate-400 text-xs tracking-wider max-w-sm text-left md:text-right">
-            ZERO TECH STACK LIMITS. RESILIENT BACKENDS, AGENTIC LLM LOOPS, AND HIGH-AVAILABILITY APIS.
           </div>
         </div>
 
@@ -25,7 +19,7 @@ export default function BentoAbout() {
           {/* Left Column: Dossier & Real Resume Summary */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-7 sm:p-8 bg-[#050816]/95 border border-white/15 backdrop-blur-xl">
-              <div className="font-mono text-xs text-cyan-400 tracking-widest mb-3">
+              <div className="font-mono text-xs tracking-widest mb-3">
                 // SYSTEM ARCHITECT SUMMARY
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
@@ -49,7 +43,7 @@ export default function BentoAbout() {
                 </div>
                 <div className="flex justify-between">
                   <span>TECH ACCREDITATION:</span>
-                  <span className="text-emerald-400">ALX AFRICA BACKEND CERTIFIED</span>
+                  <span className="">ALX AFRICA BACKEND CERTIFIED</span>
                 </div>
               </div>
             </div>
@@ -60,10 +54,10 @@ export default function BentoAbout() {
             {skillsCategorized.map((group, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-[#050816]/95 border border-white/10 hover:border-cyan-400/50 transition-colors backdrop-blur-xl flex flex-col justify-between group"
+                className="p-6 bg-[#050816]/95 border border-white/10 transition-colors backdrop-blur-xl flex flex-col justify-between group"
               >
                 <div>
-                  <div className="font-mono text-xs text-cyan-400 mb-2 font-bold tracking-widest uppercase">
+                  <div className="font-mono text-xs mb-2 font-bold tracking-widest uppercase">
                     [ 0{idx + 1} // {group.category} ]
                   </div>
 
