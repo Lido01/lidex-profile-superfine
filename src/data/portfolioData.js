@@ -3,7 +3,7 @@
 // High performance, no icons/emojis, clean editorial typography.
 
 export const personalData = {
-  name: "Lidetu",
+  name: "Lidetu Te",
   handle: "@techfocus_hub",
   githubUsername: "Lido01",
   role: "System Architect | AI Agent & Automation Engineer | Full-Stack Developer",
