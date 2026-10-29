@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="astuBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06121e" />
+      <stop offset="50%" stop-color="#050816" />
+      <stop offset="100%" stop-color="#0d1b2a" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#astuBg)" />
+  
+  <!-- Architectural Matrix -->
+  <g stroke="rgba(16, 185, 129, 0.08)" stroke-width="1">
+    <line x1="60" y1="0" x2="60" y2="500" />
+    <line x1="740" y1="0" x2="740" y2="500" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="380" x2="800" y2="380" />
+  </g>
+
+  <!-- Data Flow Nodes -->
+  <rect x="180" y="180" width="120" height="110" rx="4" fill="#0b1e2e" stroke="#10b981" stroke-width="1.5" />
+  <text x="240" y="225" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="11">STUDENT</text>
+  <text x="240" y="245" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">EVAL_PORTAL</text>
+
+  <line x1="300" y1="235" x2="380" y2="235" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4" />
+
+  <rect x="380" y="160" width="160" height="150" rx="4" fill="#0d2538" stroke="url(#emeraldGrad)" stroke-width="2" />
+  <text x="460" y="215" text-anchor="middle" fill="#00f0ff" font-family="monospace" font-size="13">JAVA_SPRING</text>
+  <text x="460" y="238" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="11">CORE ENGINE</text>
+  <text x="460" y="260" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">RELATIONAL DB</text>
+
+  <line x1="540" y1="235" x2="620" y2="235" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4,4" />
+
+  <rect x="620" y="180" width="120" height="110" rx="4" fill="#0b1e2e" stroke="#06b6d4" stroke-width="1.5" />
+  <text x="680" y="225" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="11">ACADEMIC</text>
+  <text x="680" y="245" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">ANALYTICS</text>
+
+  <!-- Monospace Header -->
+  <text x="60" y="60" fill="#10b981" font-family="monospace" font-size="12" letter-spacing="3">[ ASTU ACADEMIC PORTAL ]</text>
+  <text x="60" y="86" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="22">Institutional Student Feedback & Evaluation System</text>
+  <text x="60" y="445" fill="#94a3b8" font-family="monospace" font-size="11">ADAMA SCIENCE &amp; TECHNOLOGY UNIVERSITY // ENTERPRISE JAVA ARCHITECTURE</text>
+  <text x="740" y="445" text-anchor="end" fill="#06b6d4" font-family="monospace" font-size="11">LIVE PRODUCTION</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a17" />
+      <stop offset="50%" stop-color="#050816" />
+      <stop offset="100%" stop-color="#0e1730" />
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#certBg)" />
+  
+  <!-- Certificate Guilloche / Hairline Border -->
+  <rect x="25" y="25" width="750" height="450" fill="none" stroke="url(#goldBorder)" stroke-width="2" />
+  <rect x="35" y="35" width="730" height="430" fill="none" stroke="rgba(251, 191, 36, 0.25)" stroke-width="1" stroke-dasharray="4,4" />
+
+  <!-- Seal Emblem -->
+  <circle cx="400" cy="180" r="55" fill="#0d1936" stroke="url(#goldBorder)" stroke-width="2" />
+  <circle cx="400" cy="180" r="45" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="2,2" />
+  <text x="400" y="175" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-weight="700" font-size="14">ALX AFRICA</text>
+  <text x="400" y="195" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="9">VERIFIED SEAL</text>
+
+  <!-- Typography Content -->
+  <text x="400" y="275" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="12" letter-spacing="4">[ OFFICIAL ACCREDITATION ]</text>
+  <text x="400" y="315" text-anchor="middle" fill="#ffffff" font-family="serif" font-weight="700" font-size="26">Backend Software Development</text>
+  <text x="400" y="345" text-anchor="middle" fill="#cbd5e1" font-family="sans-serif" font-size="13">Conferred upon successful completion of intensive professional backend engineering curriculum.</text>
+  
+  <!-- Verification Footprint -->
+  <line x1="120" y1="390" x2="680" y2="390" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  
+  <text x="120" y="420" fill="#fbbf24" font-family="monospace" font-size="10">ISSUED BY: ALX AFRICA</text>
+  <text x="400" y="420" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="10">STATUS: VERIFIED CREDENTIAL</text>
+  <text x="680" y="420" text-anchor="end" fill="#94a3b8" font-family="monospace" font-size="10">ID: ALX-BACKEND-2024</text>
+</svg>
