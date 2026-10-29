@@ -31,35 +31,15 @@ export default function Projects() {
     <section id="works" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 mb-10 font-mono">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
           <div>
-            <div className="text-cyan-400 text-xs tracking-widest mb-1">
-              [ 03 // VERIFIED PRODUCTION & OPEN SOURCE PROJECTS ]
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white font-sans">
-              Selected Systems
+            <h2 className="text-cyan-400 text-xs tracking-widest mb-1 text-3xl sm:text-5xl font-bold tracking-tight text-white">
+              VERIFIED PRODUCTION & OPEN SOURCE PROJECTS
             </h2>
+            {/* <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white font-sans">
+              Selected Systems
+            </h2> */}
           </div>
-          <div className="text-slate-400 text-xs tracking-wider max-w-sm text-left md:text-right">
-            CLICK ANY CARD TO INSPECT ARCHITECTURAL BLUEPRINTS, CODE REPOS, AND FULL SPECIFICATIONS.
-          </div>
-        </div>
-
-        {/* Minimal Category Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 font-mono text-xs">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedFilter(cat)}
-              className={`px-3.5 py-1.5 border transition-all cursor-pointer ${
-                selectedFilter === cat
-                  ? 'bg-white text-black font-bold border-white'
-                  : 'bg-white/[0.02] text-slate-400 hover:text-white border-white/10 hover:border-white/30'
-              }`}
-            >
-              [ {cat.toUpperCase()} ]
-            </button>
-          ))}
         </div>
 
         {/* Image-First Project Cards Grid (Clean visual layout, NOT text-crowded) */}
@@ -68,7 +48,7 @@ export default function Projects() {
             <div
               key={project.id}
               onClick={() => setActiveProject(project)}
-              className="group bg-[#050816]/95 border border-white/15 hover:border-cyan-400/60 transition-all duration-300 backdrop-blur-xl flex flex-col justify-between overflow-hidden cursor-pointer"
+              className="group bg-[#050816]/95 border border-white/15 transition-all duration-300 backdrop-blur-xl flex flex-col justify-between overflow-hidden cursor-pointer"
             >
               {/* Visual Image Banner */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950 border-b border-white/10">
@@ -78,25 +58,12 @@ export default function Projects() {
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-60" />
-
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between font-mono text-[10px]">
-                  <span className="px-2 py-0.5 bg-black/80 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
-                    INDEX {project.index}
-                  </span>
-                  <span className="px-2 py-0.5 bg-black/80 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
-                    {project.metric.split('·')[0]}
-                  </span>
-                </div>
               </div>
 
               {/* Concise Card Body: Clean title + 1-sentence hook + tags */}
               <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
                 <div>
-                  <div className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest mb-1.5">
-                    // {project.category}
-                  </div>
-
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                  <h3 className="text-xl font-bold text-white transition-colors mb-2 leading-snug">
                     {project.title}
                   </h3>
 
@@ -124,12 +91,9 @@ export default function Projects() {
                   </div>
 
                   {/* Clean Click Prompt */}
-                  <div className="pt-3 border-t border-white/10 flex items-center justify-between font-mono text-[11px]">
-                    <span className="text-cyan-400 group-hover:underline">
+                  <div className="pt-3 border-t border-white/10 flex items-center justify-center font-mono text-[11px]">
+                    <span className="group-hover:underline">
                       [ VIEW FULL SPECIFICATIONS → ]
-                    </span>
-                    <span className="text-slate-500 text-[10px]">
-                      DETAILS
                     </span>
                   </div>
                 </div>
@@ -158,15 +122,7 @@ export default function Projects() {
                 className="relative z-10 max-w-3xl w-full max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-6 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
               >
                 {/* Modal Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-                  <div className="space-y-0.5">
-                    <span className="text-cyan-400 font-bold tracking-widest">
-                      [ SYSTEM BLUEPRINT // INDEX {activeProject.index} ]
-                    </span>
-                    <div className="text-[10px] text-slate-400">
-                      CATEGORY: {activeProject.category.toUpperCase()}
-                    </div>
-                  </div>
+                <div className="flex items-center justify-end pb-4 border-b border-white/10 mt-4 mb-6">
                   <button
                     onClick={() => setActiveProject(null)}
                     className="text-slate-400 hover:text-white cursor-pointer px-2.5 py-1 border border-white/15"
@@ -202,7 +158,7 @@ export default function Projects() {
                     </div>
                     {activeProject.architecture.map((arch, aIdx) => (
                       <div key={aIdx} className="flex items-start gap-2.5 text-slate-200">
-                        <span className="text-cyan-400 font-bold">+</span>
+                        <span className="font-bold">+</span>
                         <span className="font-sans text-xs sm:text-sm">{arch}</span>
                       </div>
                     ))}
@@ -211,9 +167,6 @@ export default function Projects() {
 
                 {/* Complete Tech Stack */}
                 <div className="mb-6">
-                  <div className="text-slate-400 uppercase tracking-wider mb-2 text-[10px]">
-                    Technologies Deployed:
-                  </div>
                   <div className="flex flex-wrap gap-1.5">
                     {activeProject.techStack.map((tech) => (
                       <span
@@ -228,7 +181,7 @@ export default function Projects() {
 
                 {/* Actions Footer */}
                 <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-emerald-400 text-xs">
+                  <div className="text-xs">
                     SLA: {activeProject.metric}
                   </div>
 
@@ -248,9 +201,9 @@ export default function Projects() {
                         href={activeProject.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex-1 sm:flex-initial px-4 py-2 bg-white text-black font-bold hover:bg-cyan-400 transition-colors text-center cursor-pointer"
+                        className="flex-1 sm:flex-initial px-4 py-2 bg-white text-black font-bold transition-colors text-center cursor-pointer"
                       >
-                        [ LAUNCH SYSTEM ]
+                        [ ONLINE ]
                       </a>
                     )}
                   </div>
