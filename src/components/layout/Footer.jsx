@@ -24,26 +24,8 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-8 border-b border-white/10">
           {/* Identity */}
           <div className="space-y-1">
-            <div className="text-white font-bold tracking-widest text-sm">
-              [ {personalData.name.toUpperCase()} ]
-            </div>
             <div className="text-slate-400 text-[11px] tracking-wider">
               {personalData.role.toUpperCase()}
-            </div>
-            <div className="text-slate-500 text-[10px]">
-              NODE: LUNAR-STATION // COORD: LAT 09.02 / LON 38.74
-            </div>
-          </div>
-
-          {/* Telemetry Status & Clock */}
-          <div className="flex flex-wrap items-center gap-6 text-[11px] text-slate-400">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
-              <span className="text-slate-300">SYSTEM SLA: 99.9% LOCKED</span>
-            </div>
-            <span className="text-white/20">|</span>
-            <div className="text-cyan-400">
-              {timeString}
             </div>
           </div>
 
@@ -79,16 +61,6 @@ export default function Footer() {
             >
               [ TOP ^ ]
             </button>
-          </div>
-        </div>
-
-        {/* Legal & System Architecture Stamp */}
-        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-[10px] text-slate-500 gap-2">
-          <div>
-            © {new Date().getFullYear()} {personalData.name.toUpperCase()} ({personalData.handle}). ALL RIGHTS RESERVED.
-          </div>
-          <div>
-            ENGINEERED WITH REACT 19 / THREE.JS / TAILWIND CSS / FRAMER MOTION
           </div>
         </div>
       </div>
