@@ -83,11 +83,8 @@ export default function Navbar() {
               }}
               className="flex items-center gap-3 group text-left cursor-pointer"
             >
-              <span className="font-mono text-xs tracking-widest text-cyan-400 font-bold">
+              <span className="font-mono text-xs tracking-widest font-bold">
                 [ {personalData.name.toUpperCase()} ]
-              </span>
-              <span className="hidden sm:inline font-mono text-[11px] text-slate-400 tracking-wider">
-                // ASTU BACKEND DEVELOPER
               </span>
             </a>
 
@@ -105,11 +102,10 @@ export default function Navbar() {
                     }}
                     className={`transition-all tracking-widest py-1 border-b cursor-pointer ${
                       isActive
-                        ? 'text-cyan-300 border-cyan-400 font-bold'
+                        ? 'border-[red] font-bold'
                         : 'text-slate-400 hover:text-white border-transparent hover:border-white/30'
                     }`}
                   >
-                    <span className="text-[10px] text-slate-500 mr-1">{item.index}</span>
                     <span>{item.label}</span>
                   </a>
                 );
@@ -119,7 +115,6 @@ export default function Navbar() {
             {/* Right Status Pill */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-white/10 font-mono text-[11px]">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
                 <span className="text-slate-300 tracking-wider text-[10px] sm:text-[11px]">
                   AVAILABLE
                 </span>
@@ -149,7 +144,7 @@ export default function Navbar() {
                     onClick={() => handleNavClick(item.href)}
                     className={`flex-1 py-2 px-1 text-center transition-all cursor-pointer relative ${
                       isActive
-                        ? 'text-cyan-300 font-bold bg-white/10 border-t border-cyan-400'
+                        ? 'font-bold bg-white/10 border-t border-[red]'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
