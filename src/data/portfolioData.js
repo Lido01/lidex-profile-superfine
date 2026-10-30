@@ -19,10 +19,11 @@ export const personalData = {
     period: "2023 — Present"
   },
   channels: {
-    telegram: "https://t.me/techfocus_hub",
+    telegram: "https://t.me/lidet001",
     github: "https://github.com/Lido01",
     buildr: "https://buildr.mikaelen.site/z-break",
-    email: "lidosinafanis@gmail.com"
+    email: "lidosinafanis@gmail.com",
+    linkedin: "https://www.linkedin.com/in/lidetu-tesfaye/"
   },
   metrics: [
     { label: "Community Builders", value: "165+", detail: "Tech Focus Hub" },
@@ -85,7 +86,7 @@ export const projectsData = [
     index: "01",
     title: "AI Agent Telegram Channel Manager",
     category: "Agentic AI & Automation",
-    image: "/projects/ai-telegram-agent.svg",
+    image: "/projects/ai-telegram-agent.png",
     tagline: "Autonomous content generation, media synthesis, and scheduled channel distribution.",
     fullDescription: "An intelligent autonomous agent built for complete Telegram channel management. Generates technical markdown posts, synthesizes topical images/videos, and dispatches on precision cron schedules without human intervention.",
     architecture: [
@@ -98,14 +99,32 @@ export const projectsData = [
     repoUrl: "https://github.com/Lido01",
     liveUrl: "https://t.me/techfocus_hub"
   },
+  { 
+    id: "elevate-skill-company-full-website",
+    index: "02",
+    title: "Elevate Skill Company Full Website",
+    category: "Full-Stack Web Development",
+    image: "/projects/elevate-website.png",
+    tagline: "Comprehensive web platform for Elevate Skill Startup Company, showcasing Online teaching services and portfolio.",
+    fullDescription: "Comprehensive web platform for Elevate Skill Startup Company, showcasing Online teaching services and portfolio. Featuring responsive design, dynamic content management, and integrated contact forms.",
+    architecture: [
+      "React frontend with Tailwind CSS for responsive design",
+      "FastAPI backend serving RESTful APIs for dynamic content",
+      "PostgreSQL database for storing service and portfolio data"
+    ],
+    techStack: ["React", "Tailwind CSS", "FastAPI", "PostgreSQL", "Docker"],
+    metric: "Responsive & Dynamic Web Experience",
+    repoUrl: "https://github.com/orgs/ElevateSkill/repositories",
+    liveUrl: "https://elevateskill.com"
+  },
   {
     id: "astu-student-feedback",
     index: "02",
-    title: "ASTU Student-Feedback System",
+    title: "Peer Student-Feedback Dashboard",
     category: "Institutional Full-Stack",
-    image: "/projects/astu-feedback.svg",
-    tagline: "Academic evaluation and departmental feedback platform for university staff.",
-    fullDescription: "Engineered for Adama Science and Technology University Academic Department. Allows students to evaluate faculty and academic curricula through encrypted, authenticated feedback loops with real-time statistical aggregation.",
+    image: "/projects/astu-feedback.webp",
+    tagline: "Academic evaluation and departmental feedback dashboard for university students.",
+    fullDescription: "Engineered for ASTU Academic Department. Allows students to evaluate faculty and academic curricula through encrypted, authenticated feedback loops with real-time statistical aggregation.",
     architecture: [
       "Java backend microservice handling concurrent student evaluation submissions",
       "Relational database schema optimized for multidimensional statistical queries",
@@ -113,7 +132,7 @@ export const projectsData = [
     ],
     techStack: ["Java", "Spring Boot", "PostgreSQL", "HTML/CSS", "JavaScript"],
     metric: "Institutional University Deployment",
-    repoUrl: "https://github.com/Lido01",
+    repoUrl: "https://github.com/Lido01/stud-feedback-evaluation",
     liveUrl: "https://buildr.mikaelen.site/z-break"
   },
   {
@@ -139,7 +158,7 @@ export const projectsData = [
     index: "04",
     title: "Social-Media-API High-Throughput Engine",
     category: "Backend Python & REST API",
-    image: "/projects/social-api.svg",
+    image: "/projects/social-api.png",
     tagline: "Scalable social backend for posts, comments, likes, tags, and category CRUD.",
     fullDescription: "A production-ready social networking backend API. Supports user authentication, granular permission scopes, polymorphic tagging, comment hierarchies, and real-time interaction metrics.",
     architecture: [
@@ -247,7 +266,7 @@ export const projectsData = [
     index: "10",
     title: "Digital Clock & Traffic Light Detector",
     category: "Embedded Firmware & Hardware",
-    image: "/projects/stock-mgt.svg",
+    image: "/projects/stem-trafic.png",
     tagline: "Microcontroller clock and automated traffic sensor built at Bonga STEM Center.",
     fullDescription: "Hardware prototype built at Bonga University STEM Center. Combined Arduino microcontroller logic with optical/timing sensors to coordinate automated traffic light sequences alongside digital clock displays.",
     architecture: [
@@ -269,7 +288,7 @@ export const certificationsData = [
     issuer: "ALX Africa",
     credentialId: "ALX-BACKEND-AFRICA",
     date: "Completed",
-    image: "/certs/alx-backend.svg",
+    image: "/certs/alx-backend.png",
     tagline: "Advanced mastery in Python, high-performance APIs, databases, and microservices.",
     fullDescription: "Completed intensive professional Backend Web Development program at ALX Africa. Rigorous assessment covered complex backend architecture, relational & NoSQL databases, scalable API design, Docker containerization, and agile engineering workflows.",
     skillsCovered: ["Python Backend", "Django REST Framework", "Relational Databases", "CI/CD & Docker", "API Architecture"]
@@ -280,7 +299,7 @@ export const certificationsData = [
     issuer: "ALX Africa",
     credentialId: "ALX-FOUNDATION-AFRICA",
     date: "Certified",
-    image: "/certs/alx-foundation.svg",
+    image: "/certs/alx-foundation.png",
     tagline: "Foundational mastery of computational thinking, algorithmic logic, and engineering rigor.",
     fullDescription: "Official certification conferred by ALX Africa validating core software engineering foundation, computational problem solving, data structures, and cross-functional agile engineering leadership.",
     skillsCovered: ["Computational Thinking", "Agile Methodologies", "Git Version Control", "Problem Solving", "Peer Collaboration"]
@@ -291,7 +310,7 @@ export const certificationsData = [
     issuer: "Bonga University STEM Center",
     credentialId: "STEM-BONGA-2022",
     date: "2022",
-    image: "/certs/stem-bonga.svg",
+    image: "/certs/stem-bonga.png",
     tagline: "Hardware and embedded automation prototyping at Bonga University STEM Center.",
     fullDescription: "Conferred at Bonga University STEM Center for leading hardware development of Arduino microcontroller-based digital clock and traffic light detection systems, coordinating team engineering sprints.",
     skillsCovered: ["Arduino Microcontrollers", "Circuit Architecture", "Sensor Integration", "Firmware Logic", "Hardware Leadership"]
