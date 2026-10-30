@@ -4,13 +4,15 @@ import { certificationsData, experienceData, testimonialsData, personalData } fr
 
 export default function Experience() {
   const [activeCert, setActiveCert] = useState(null);
+  const [isCvOpen, setIsCvOpen] = useState(false);
 
   // Close modal on Escape
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setActiveCert(null);
+      if (e.key === 'Escape') setIsCvOpen(false);
     };
-    if (activeCert) {
+    if (activeCert || isCvOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
@@ -18,7 +20,7 @@ export default function Experience() {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeCert]);
+  }, [activeCert, isCvOpen]);
 
   return (
     <>
@@ -156,10 +158,17 @@ export default function Experience() {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
             <div>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-cyan-400 text-xs tracking-widest">
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-xs tracking-widest">
                 Career Trajectory
               </h2>
             </div>
+            <button
+              type="button"
+              onClick={() => setIsCvOpen(true)}
+              className="w-full md:w-auto border border-cyan-300/40 px-4 py-3 text-left text-[11px] tracking-wider text-cyan-200 transition-colors hover:border-cyan-200 hover:bg-cyan-300/10"
+            >
+              [ VIEW CV PDF ]
+            </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -201,6 +210,22 @@ export default function Experience() {
 
             {/* Right: Education & Core Strengths */}
             <div className="lg:col-span-4 space-y-6">
+              <div className="p-6 sm:p-7 bg-cyan-400/[0.06] border border-cyan-300/25 backdrop-blur-xl font-mono text-xs">
+                <div className="tracking-widest uppercase mb-3 text-cyan-200">
+                  // DOCUMENT ACCESS
+                </div>
+                <p className="font-sans text-sm leading-relaxed text-slate-300 mb-5">
+                  Read the complete career profile in a focused, responsive document viewer.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsCvOpen(true)}
+                  className="w-full border border-white/20 px-3 py-2 text-left text-[11px] tracking-wider text-white transition-colors hover:border-cyan-200 hover:text-cyan-200"
+                >
+                  OPEN FULL CV →
+                </button>
+              </div>
+
               {/* Education Box */}
               <div className="p-6 sm:p-7 bg-[#050816]/95 border border-white/15 backdrop-blur-xl font-mono text-xs">
                 <div className="tracking-widest uppercase mb-3">
@@ -257,12 +282,70 @@ export default function Experience() {
         </div>
       </section>
 
+      <AnimatePresence>
+        {isCvOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsCvOpen(false)}
+              className="fixed inset-0 bg-black/85 backdrop-blur-xl"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.98, y: 12 }}
+              transition={{ duration: 0.22 }}
+              className="relative z-10 flex h-[min(92vh,980px)] w-full max-w-6xl flex-col overflow-hidden border border-white/20 bg-[#050816] shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="cv-viewer-title"
+            >
+              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6 font-mono">
+                <div>
+                  <h3 id="cv-viewer-title" className="text-sm font-bold tracking-wider text-white sm:text-base">
+                    CURRICULUM VITAE
+                  </h3>
+                  <p className="mt-1 text-[10px] text-slate-400">Lidetu Te · PDF DOCUMENT</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="/cv.pdf"
+                    download
+                    className="hidden border border-white/15 px-3 py-2 text-[10px] text-slate-300 transition-colors hover:border-cyan-200 hover:text-cyan-200 sm:block"
+                  >
+                    DOWNLOAD
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setIsCvOpen(false)}
+                    className="border border-white/15 px-3 py-2 text-[10px] text-slate-300 transition-colors hover:border-white/40 hover:text-white"
+                  >
+                    CLOSE X
+                  </button>
+                </div>
+              </div>
+
+              <div className="min-h-0 flex-1 overflow-hidden bg-slate-900">
+                <iframe
+                  src="/cv.pdf#view=FitH"
+                  title="Lidetu Te curriculum vitae"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* 3. PEER & COMMUNITY ENDORSEMENTS */}
       <section id="endorsements" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
             <div>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-cyan-400 text-xs tracking-widest">
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-xs tracking-widest">
                 What Client Said?
               </h2>
             </div>
