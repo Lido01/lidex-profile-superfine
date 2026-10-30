@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { certificationsData, experienceData, testimonialsData, personalData } from '../../data/portfolioData';
 
+const cvDocumentUrl = 'https://docs.google.com/document/d/1imYTHOj2K86ukJNzcAIs8Wu8lp8XDoeO-TY1ff2RrUg';
+const cvPreviewUrl = `${cvDocumentUrl}/preview`;
+
 export default function Experience() {
   const [activeCert, setActiveCert] = useState(null);
   const [isCvOpen, setIsCvOpen] = useState(false);
@@ -167,7 +170,7 @@ export default function Experience() {
               onClick={() => setIsCvOpen(true)}
               className="w-full md:w-auto border border-cyan-300/40 px-4 py-3 text-left text-[11px] tracking-wider text-cyan-200 transition-colors hover:border-cyan-200 hover:bg-cyan-300/10"
             >
-              [ VIEW CV PDF ]
+              [ VIEW CV ONLINE ]
             </button>
           </div>
 
@@ -308,15 +311,16 @@ export default function Experience() {
                   <h3 id="cv-viewer-title" className="text-sm font-bold tracking-wider text-white sm:text-base">
                     CURRICULUM VITAE
                   </h3>
-                  <p className="mt-1 text-[10px] text-slate-400">Lidetu Te · PDF DOCUMENT</p>
+                  <p className="mt-1 text-[10px] text-slate-400">Lidetu Te · ONLINE DOCUMENT</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <a
-                    href="/cv.pdf"
-                    download
+                    href={cvDocumentUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="hidden border border-white/15 px-3 py-2 text-[10px] text-slate-300 transition-colors hover:border-cyan-200 hover:text-cyan-200 sm:block"
                   >
-                    DOWNLOAD
+                    OPEN IN DOCS
                   </a>
                   <button
                     type="button"
@@ -330,8 +334,9 @@ export default function Experience() {
 
               <div className="min-h-0 flex-1 overflow-hidden bg-slate-900">
                 <iframe
-                  src="/cv.pdf#view=FitH"
-                  title="Lidetu Te curriculum vitae"
+                  src={cvPreviewUrl}
+                  title="Lidetu Te online curriculum vitae"
+                  referrerPolicy="no-referrer-when-downgrade"
                   className="h-full w-full border-0"
                 />
               </div>
