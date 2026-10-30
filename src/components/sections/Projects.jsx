@@ -33,7 +33,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
           <div>
-            <h2 className="text-cyan-400 text-xs tracking-widest mb-1 text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-xs tracking-widest mb-1 text-3xl sm:text-5xl font-bold tracking-tight text-white">
               VERIFIED PRODUCTION & OPEN SOURCE PROJECTS
             </h2>
             {/* <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white font-sans">

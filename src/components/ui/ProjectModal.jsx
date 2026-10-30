@@ -77,7 +77,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
               {project.title}
             </h2>
-            <p className="text-base text-cyan-400/90 font-mono mb-4">
+            <p className="text-base  font-mono mb-4">
               {project.subtitle}
             </p>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -89,7 +89,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           {project.architecture && (
             <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
               <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-white tracking-wide uppercase font-mono">
-                <Cpu className="w-4 h-4 text-cyan-400" />
+                <Cpu className="w-4 h-4" />
                 <span>Architecture & Engineering Highlights</span>
               </div>
               <ul className="space-y-2.5">
@@ -128,7 +128,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-medium text-sm hover:from-cyan-400 hover:to-indigo-500 transition-all shadow-lg shadow-cyan-500/25 active:scale-95"
+                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-medium text-sm hover:from-[white] hover:to-[red] transition-all shadow-lg shadow-cyan-500/25 active:scale-95"
               >
                 <span>Launch Live System</span>
                 <ExternalLink className="w-4 h-4" />

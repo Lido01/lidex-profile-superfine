@@ -35,7 +35,7 @@ export default function Footer() {
               href={personalData.channels.telegram}
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
             >
               [ TELEGRAM ]
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
               href={personalData.channels.buildr}
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 hover:text-purple-400 transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
             >
               [ BUILDR ]
             </a>
@@ -55,12 +55,14 @@ export default function Footer() {
             >
               [ GITHUB ]
             </a>
-            <button
-              onClick={scrollToTop}
-              className="px-3 py-1 bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                        <a
+              href={personalData.channels.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-400 hover:text-white transition-colors"
             >
-              [ TOP ^ ]
-            </button>
+              [ LINKEDIN ]
+            </a>
           </div>
         </div>
       </div>

@@ -9,9 +9,9 @@ export default function SpotlightBadge({
 }) {
   const colorMap = {
     cyan: {
-      bg: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-300',
-      dot: 'bg-cyan-400 shadow-[0_0_8px_#00f0ff]',
-      pulse: 'bg-cyan-400'
+      bg: '',
+      dot: 'shadow-[0_0_8px_#00f0ff]',
+      pulse: ''
     },
     emerald: {
       bg: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300',

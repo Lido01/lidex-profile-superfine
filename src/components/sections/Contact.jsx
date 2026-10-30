@@ -28,7 +28,7 @@ export default function Contact() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
           <div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-cyan-400 text-xs tracking-widest">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white text-xs tracking-widest">
               Initialize Project Dispatch
             </h2>
           </div>
@@ -38,7 +38,7 @@ export default function Contact() {
           {/* Left: Communications Channels */}
           <div className="lg:col-span-5 space-y-6 font-mono">
             <div className="p-7 sm:p-8 bg-[#050816]/95 border border-white/15 backdrop-blur-xl">
-              <h3 className="text-xl font-bold text-white mb-2 text-cyan-400 tracking-widest">
+              <h3 className="text-xl font-bold text-white mb-2 tracking-widest">
                 Real-Time Telegram &amp; GitHub
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
