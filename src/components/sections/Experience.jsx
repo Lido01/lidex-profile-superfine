@@ -78,7 +78,7 @@ export default function Experience() {
           {/* CERTIFICATE DEEP DIVE MODAL */}
           <AnimatePresence>
             {activeCert && (
-              <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
+              <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -92,9 +92,9 @@ export default function Experience() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 15 }}
                   transition={{ duration: 0.25 }}
-                  className="relative z-10 max-w-2xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
+                  className="relative z-[101] max-w-2xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
                 >
-                  <div className="sticky top-0 z-20 flex items-center justify-end -mx-4 px-4 sm:-mx-8 sm:px-8 py-3 bg-[#050816] border-b border-white/10 mb-4">
+                  <div className="sticky top-0 z-[110] flex items-center justify-end -mx-4 px-4 sm:-mx-8 sm:px-8 py-3 bg-[#050816] border-b border-white/10 mb-4">
                     <button
                       onClick={() => setActiveCert(null)}
                       className="text-slate-400 hover:text-white cursor-pointer px-2.5 py-1 border border-white/15"

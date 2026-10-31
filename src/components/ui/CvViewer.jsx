@@ -8,7 +8,7 @@ export default function CvViewer({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-hidden">
+        <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -22,12 +22,12 @@ export default function CvViewer({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 12 }}
             transition={{ duration: 0.22 }}
-            className="relative z-10 flex h-[calc(100dvh-1rem)] sm:h-[min(94vh,1020px)] w-full max-w-6xl flex-col overflow-hidden border border-white/20 bg-[#050816] shadow-2xl"
+            className="relative z-[101] flex h-[calc(100dvh-1rem)] sm:h-[min(94vh,1020px)] w-full max-w-6xl flex-col overflow-hidden border border-white/20 bg-[#050816] shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="cv-viewer-title"
           >
-            <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/10 px-3 py-3 sm:px-6 font-mono">
+            <div className="relative z-[110] flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-[#050816] px-3 py-3 sm:px-6 font-mono">
               <div className="min-w-0">
                 <h2 id="cv-viewer-title" className="text-sm font-bold tracking-wider text-white sm:text-base">
                   CURRICULUM VITAE
