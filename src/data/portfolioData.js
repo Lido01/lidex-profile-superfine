@@ -140,18 +140,21 @@ export const projectsData = [
     index: "03",
     title: "DylexiFLOW Assistive Reader",
     category: "Open Source AI & Accessibility",
-    image: "/projects/dylexiflow.svg",
+    image: "/projects/dylexiflow.png",
     tagline: "Unlocking reading independence and cognitive joy for K-12 students with dyslexia and ADHD.",
     fullDescription: "An open-source assistive reading platform designed to eliminate cognitive fatigue for K-12 students with dyslexia and ADHD. Integrates dynamic typographic spacing, contrast adaptation, and assistive comprehension tools.",
     architecture: [
       "Cognitive wave text formatting adapting syllable segmentation in real-time",
       "Accessibility-first frontend with zero-latency visual adjustments",
-      "Open-source modular core inviting community educators and neurodivergent advocates"
+      "Open-source modular core inviting community educators and neurodivergent advocates",
+      "Community-driven development with regular updates and feature enhancements",
+      "Collaborative issue tracking and bug reporting system",
+      "Active community forums for user support and feedback"
     ],
     techStack: ["Python", "FastAPI", "React", "Tailwind CSS", "Accessibility APIs"],
     metric: "Open-Source K-12 Impact",
-    repoUrl: "https://github.com/Lido01",
-    liveUrl: "https://buildr.mikaelen.site/z-break"
+    repoUrl: "https://github.com/riyanshika7/dyslexiflow",
+    liveUrl: "https://youtu.be/sdBd_I33lYQ?si=O53KheOeBSJAhNR3"
   },
   {
     id: "social-media-api",
@@ -176,15 +179,19 @@ export const projectsData = [
     index: "05",
     title: "MyBudget University Exchange",
     category: "Full-Stack E-Commerce",
-    image: "/projects/mybudget-ecommerce.svg",
-    tagline: "Peer-to-peer campus marketplace for students to buy, sell, and exchange products.",
-    fullDescription: "A specialized e-commerce platform built for university students. Enables authenticated campus members to list second-hand academic materials, electronics, and goods with integrated chat and escrow coordination.",
+    image: "/projects/my-budget.png",
+    tagline: "Peer-to-peer campus marketplace for students to buy, sell, and exchange, rent second hand used products.",
+    fullDescription: "Peer-to-peer campus marketplace for students to buy, sell, and exchange, rent second hand used products. A specialized e-commerce platform built for university students. Enables authenticated campus members to list second-hand academic materials, electronics, and goods with integrated chat and escrow coordination.",
     architecture: [
       "Relational inventory ledger preventing duplicate claims during concurrent checkouts",
       "Real-time student chat messaging for on-campus handover coordination",
-      "Lightweight responsive client optimized for low-bandwidth university networks"
+      "Lightweight responsive client optimized for low-bandwidth university networks",
+      "Automated email and SMS notifications for transaction updates and confirmations", 
+      "Secure payment processing with PCI-DSS compliance",
+      "Role-based access control (RBAC) for student, seller, and admin dashboards",
+      "Automated reporting and analytics for transaction insights",
     ],
-    techStack: ["Python", "FastAPI / Django", "PostgreSQL", "Tailwind CSS", "WebSockets"],
+    techStack: ["Python", "FastAPI / Django", "PostgreSQL", "Tailwind CSS", "WebSockets", "Stripe API", "Docker", "Agile / Scrum", "RBAC Security", "Unit & Integration Testing"],
     metric: "Campus Peer-to-Peer Hub",
     repoUrl: "https://github.com/Lido01",
     liveUrl: "https://buildr.mikaelen.site/z-break"
@@ -192,17 +199,20 @@ export const projectsData = [
   {
     id: "stock-mgt-system",
     index: "06",
-    title: "Stock Management Institution System",
+    title: "RBAC Stock MGT For Institution Warehouse System Dashboard",
     category: "Enterprise Backend Architecture",
-    image: "/projects/stock-mgt.svg",
+    image: "/projects/stock-mgt.jfif",
     tagline: "Enterprise-grade warehouse inventory tracking with ACID audit trails.",
-    fullDescription: "Developed as Backend Architect and Team Lead for a full store stock management institutional platform. Guarantees strict transactional integrity, automated low-stock dispatch notices, and historical audit reports.",
+    fullDescription: "Developed as Backend Architect and Team Lead for a full store stock management institutional platform. Guarantees strict transactional integrity, automated low-stock dispatch notices, and historical audit reports. Supports multi-tiered administrative dashboards and RBAC for warehouse staff and managers.",
     architecture: [
       "Double-entry ledger database schema ensuring immutable inventory history",
       "Automated stock threshold listeners triggering reorder signals",
-      "Role-tiered administrative dashboards with cryptographic audit logging"
+      "Role-tiered administrative dashboards with cryptographic audit logging",
+      "RESTful API endpoints with strict input validation and rate limiting for high-traffic warehouse operations", 
+      "Automated reporting and analytics for inventory insights", 
+      "Multi-user concurrency control preventing race conditions during stock updates"
     ],
-    techStack: ["Python", "PostgreSQL", "Redis", "Docker", "Agile / Scrum"],
+    techStack: ["Node.js", "PostgreSQL", "Redis", "Docker", "Agile / Scrum", "RBAC Security", "RESTful API Design", "Unit & Integration Testing"],
     metric: "Team Lead & Lead Architect",
     repoUrl: "https://github.com/Lido01",
     liveUrl: "https://buildr.mikaelen.site/z-break"
@@ -212,7 +222,7 @@ export const projectsData = [
     index: "07",
     title: "Multi-User Personal Blog Platform",
     category: "Open Source Backend",
-    image: "/projects/social-api.svg",
+    image: "/projects/my-blog-website.png",
     tagline: "Full-stack personal blogging engine with multi-author publishing workflows.",
     fullDescription: "Open-source multi-user publishing platform. Supports markdown authoring, category filtering, user profile management, and clean REST endpoints.",
     architecture: [
@@ -230,15 +240,24 @@ export const projectsData = [
     index: "08",
     title: "Agentic Barber Booking Automation",
     category: "Client Automation Systems",
-    image: "/projects/ai-telegram-agent.svg",
+    image: "/projects/barber-agent.png",
     tagline: "Autonomous appointment booking, calendar sync, and customer reminder pipeline.",
-    fullDescription: "Commissioned agentic scheduling platform developed for an online client. Coordinates client bookings, prevents double scheduling, and dispatches automated SMS/Telegram reminders.",
+    fullDescription: "Autonomous appointment booking, calendar sync, and customer reminder(SMS or Email Notifications) pipeline. Commissioned scheduling platform developed for an online client. Coordinates client bookings, prevents double scheduling, and dispatches automated SMS/Telegram reminders. Integrates with Google Calendar for real-time availability and rescheduling. Supports multi-user access for staff and administrators.",
     architecture: [
       "Autonomous slot-allocation state machine preventing race condition bookings",
+      "GPS Location-based availability checks for service providers",
+      "Automated SMS and Telegram notification pipelines for appointment reminders",
+      "Dynamic booking form with real-time validation and error handling",
+      "Secure user authentication and role-based access control (RBAC) for staff and admin dashboards",
       "Calendar API two-way synchronization with automated rescheduling triggers",
-      "Serverless webhook listener executing automated reminder pipelines"
+      "Serverless webhook listener executing automated reminder pipelines",
+      "Real-time notification system for appointment updates and cancellations",
+      "Role-based access control (RBAC) for staff and admin dashboards",
+      "Data persistence and backup strategies for user and booking information",
+      "Scalable architecture to handle increasing user base and booking volume",
+      "Automated reporting and analytics for appointment trends and customer engagement"
     ],
-    techStack: ["Python", "Telegram API", "Google Calendar API", "FastAPI"],
+    techStack: ["Python", "Telegram API", "Google Calendar API", "FastAPI", "PostgreSQL", "Docker", "RBAC Security", "Unit & Integration Testing", "Serverless Webhooks", "Automated Notification Pipelines", "Claudflare Workers", "Agile"],
     metric: "Production Client Deployment",
     repoUrl: "https://github.com/Lido01",
     liveUrl: "https://buildr.mikaelen.site/z-break"
@@ -248,15 +267,19 @@ export const projectsData = [
     index: "09",
     title: "Found_My_Soulmate Interactive Game",
     category: "Interactive Web Platform",
-    image: "/projects/dylexiflow.svg",
+    image: "/projects/my-soulmate.png",
     tagline: "Matchmaking & conversational gaming platform with real or virtual companions.",
-    fullDescription: "A web-based interactive matchmaking and social game platform where users can connect with registered peers or craft customized virtual conversational companions following compatibility chat assessments.",
+    fullDescription: "A web-based Matchmaking & conversational gaming platform with real or virtual companion interactions. Interactive matchmaking and social platform where users can connect with registered peers or craft customized virtual conversational companions following compatibility chat assessments. Supports real-time chat, dynamic profile generation, and responsive UI interactions. ",
     architecture: [
       "Compatibility evaluation algorithm calculating multi-factor affinity scores",
       "Simulated conversational agent loop for virtual companion interactions",
-      "Real-time session state management with responsive UI controls"
+      "Real-time session state management with responsive UI controls",
+      "WebSocket-based chat engine enabling low-latency user interactions",
+      "Computer or Real Live Chat with Developer or Registered Users",
+      "Dynamic profile generation and matchmaking based on user preferences and compatibility scores"
+
     ],
-    techStack: ["Python", "JavaScript", "WebSockets", "HTML/CSS"],
+    techStack: ["Node.js", "JavaScript", "WebSockets", "Cloudeflare Database", "LocalStorage"],
     metric: "Interactive Web Application",
     repoUrl: "https://github.com/Lido01",
     liveUrl: "https://buildr.mikaelen.site/z-break"
