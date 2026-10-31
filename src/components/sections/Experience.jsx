@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { certificationsData, experienceData, testimonialsData, personalData } from '../../data/portfolioData';
-
-const cvDocumentUrl = 'https://docs.google.com/document/d/1imYTHOj2K86ukJNzcAIs8Wu8lp8XDoeO-TY1ff2RrUg';
-const cvPreviewUrl = `${cvDocumentUrl}/preview`;
+import CvViewer from '../ui/CvViewer';
 
 export default function Experience() {
   const [activeCert, setActiveCert] = useState(null);
@@ -28,7 +26,7 @@ export default function Experience() {
   return (
     <>
       {/* 1. PROFESSIONAL CERTIFICATES & ACCREDITATIONS (Image-First, Click to view full details) */}
-      <section id="credentials" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
+      <section id="credentials" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
@@ -80,7 +78,7 @@ export default function Experience() {
           {/* CERTIFICATE DEEP DIVE MODAL */}
           <AnimatePresence>
             {activeCert && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+              <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -94,9 +92,9 @@ export default function Experience() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 15 }}
                   transition={{ duration: 0.25 }}
-                  className="relative z-10 max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-6 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
+                  className="relative z-10 max-w-2xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
                 >
-                  <div className="flex items-center justify-end pb-4 border-b border-white/10 mt-4 mb-4">
+                  <div className="sticky top-0 z-20 flex items-center justify-end -mx-4 px-4 sm:-mx-8 sm:px-8 py-3 bg-[#050816] border-b border-white/10 mb-4">
                     <button
                       onClick={() => setActiveCert(null)}
                       className="text-slate-400 hover:text-white cursor-pointer px-2.5 py-1 border border-white/15"
@@ -156,7 +154,7 @@ export default function Experience() {
       </section>
 
       {/* 2. REAL RESUME WORK EXPERIENCE & EDUCATION */}
-      <section id="experience" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
+      <section id="experience" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
@@ -168,9 +166,9 @@ export default function Experience() {
             <button
               type="button"
               onClick={() => setIsCvOpen(true)}
-              className="w-full md:w-auto border border-cyan-300/40 px-4 py-3 text-left text-[11px] tracking-wider text-cyan-200 transition-colors hover:border-cyan-200 hover:bg-cyan-300/10"
+              className="w-full md:w-auto border border-[white]/10 px-4 py-3 text-left text-[11px] tracking-wider  transition-colors hover:border-[white] hover:bg-[red]/5 hover:text-[red] hover:font-bold"
             >
-              [ VIEW CV ONLINE ]
+              [ VIEW CV]
             </button>
           </div>
 
@@ -213,7 +211,7 @@ export default function Experience() {
 
             {/* Right: Education & Core Strengths */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="p-6 sm:p-7 bg-cyan-400/[0.06] border border-cyan-300/25 backdrop-blur-xl font-mono text-xs">
+              <div className="p-6 sm:p-7 bg-[#050816]/95 border border-white/15 backdrop-blur-xl font-mono text-xs">
                 <div className="tracking-widest uppercase mb-3 text-cyan-200">
                   // DOCUMENT ACCESS
                 </div>
@@ -285,68 +283,10 @@ export default function Experience() {
         </div>
       </section>
 
-      <AnimatePresence>
-        {isCvOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsCvOpen(false)}
-              className="fixed inset-0 bg-black/85 backdrop-blur-xl"
-            />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98, y: 12 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.98, y: 12 }}
-              transition={{ duration: 0.22 }}
-              className="relative z-10 flex h-[min(92vh,980px)] w-full max-w-6xl flex-col overflow-hidden border border-white/20 bg-[#050816] shadow-2xl"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="cv-viewer-title"
-            >
-              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6 font-mono">
-                <div>
-                  <h3 id="cv-viewer-title" className="text-sm font-bold tracking-wider text-white sm:text-base">
-                    CURRICULUM VITAE
-                  </h3>
-                  <p className="mt-1 text-[10px] text-slate-400">Lidetu Te · ONLINE DOCUMENT</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={cvDocumentUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hidden border border-white/15 px-3 py-2 text-[10px] text-slate-300 transition-colors hover:border-cyan-200 hover:text-cyan-200 sm:block"
-                  >
-                    OPEN IN DOCS
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setIsCvOpen(false)}
-                    className="border border-white/15 px-3 py-2 text-[10px] text-slate-300 transition-colors hover:border-white/40 hover:text-white"
-                  >
-                    CLOSE X
-                  </button>
-                </div>
-              </div>
-
-              <div className="min-h-0 flex-1 overflow-hidden bg-slate-900">
-                <iframe
-                  src={cvPreviewUrl}
-                  title="Lidetu Te online curriculum vitae"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0"
-                />
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <CvViewer isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
 
       {/* 3. PEER & COMMUNITY ENDORSEMENTS */}
-      <section id="endorsements" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
+      <section id="endorsements" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
             <div>
