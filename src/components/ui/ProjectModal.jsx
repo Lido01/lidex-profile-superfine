@@ -23,7 +23,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,16 +39,18 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0b1022]/95 p-6 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
+          className="relative z-10 w-full max-w-3xl max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0b1022]/95 p-4 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
         >
           {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="sticky top-0 z-20 flex justify-end -mx-4 -mt-4 px-4 py-3 sm:-mx-8 sm:-mt-8 sm:px-8 bg-[#0b1022]/95">
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
           {/* Header Banner & Visual */}
           <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10 aspect-video max-h-64 sm:max-h-80 w-full bg-slate-950">
