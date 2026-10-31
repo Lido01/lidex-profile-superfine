@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="dispatch" className="relative py-28 px-4 sm:px-8 z-10 border-t border-white/10">
+    <section id="dispatch" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
