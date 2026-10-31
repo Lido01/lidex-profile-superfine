@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { personalData } from '../../data/portfolioData';
+import CvViewer from '../ui/CvViewer';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('hero');
   const [scrolled, setScrolled] = useState(false);
+  const [isCvOpen, setIsCvOpen] = useState(false);
   
   // Mobile bottom bar scroll visibility
   const [showMobileNav, setShowMobileNav] = useState(true);
@@ -54,6 +56,22 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsCvOpen(false);
+    };
+
+    if (isCvOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isCvOpen]);
 
   const handleNavClick = (href) => {
     const element = document.querySelector(href);
@@ -115,9 +133,13 @@ export default function Navbar() {
             {/* Right Status Pill */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-white/10 font-mono text-[11px]">
-                <span className="text-slate-300 tracking-wider text-[10px] sm:text-[11px]">
-                  AVAILABLE
-                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsCvOpen(true)}
+                  className="w-full md:w-auto border border-white/10 px-2 py-2 text-left text-[8px] tracking-wider transition-colors hover:border-[white] hover:bg-[red]/5 hover:text-[red] hover:font-bold"
+                >
+                  [ VIEW CV]
+                </button>
               </div>
             </div>
           </nav>
@@ -161,6 +183,8 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <CvViewer isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
     </>
   );
 }
