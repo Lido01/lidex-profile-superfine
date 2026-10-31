@@ -26,7 +26,7 @@ function App() {
       className="relative min-h-screen bg-[#050816] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden"
     >
       {/* 1. Underlying WebGL Celestial Starfield */}
-      <Scene3D />
+      {/* <Scene3D /> */}
 
       {/* 2. Fixed Spatial Laptop Background with Scroll-Driven Zoom */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -61,8 +61,8 @@ function App() {
       {/* 4. Main Scrollable Content Layer (Appears scrolling out of the computer display) */}
       <main className="relative z-10">
         <Hero />
-        <BentoAbout />
         <Projects />
+        <BentoAbout />
         <Experience />
         <Contact />
       </main>
