@@ -3,7 +3,7 @@ import { personalData, skillsCategorized } from '../../data/portfolioData';
 
 export default function BentoAbout() {
   return (
-    <section id="architecture" className="relative py-28 px-4 sm:px-8 z-10">
+    <section id="architecture" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
@@ -15,23 +15,16 @@ export default function BentoAbout() {
         </div>
 
         {/* 2-Column Senior Engineer Summary & Categorized Skills */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
           {/* Left Column: Dossier & Real Resume Summary */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-7 sm:p-8 bg-[#050816]/95 border border-white/15 backdrop-blur-xl">
               <div className="font-mono text-xs tracking-widest mb-3">
                 // SYSTEM ARCHITECT SUMMARY
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
-                Backend Reliability Meets Agentic Automation
-              </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans mb-4">
                 {personalData.summary}
               </p>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans mb-6">
-                Currently operating as Backend Python Developer at Adama Science and Technology University (ASTU), translating mission-critical academic requirements into scalable, containerized software systems.
-              </p>
-
               <div className="pt-5 border-t border-white/10 font-mono text-[11px] text-slate-400 space-y-2">
                 <div className="flex justify-between">
                   <span>UNIVERSITY:</span>
@@ -39,7 +32,7 @@ export default function BentoAbout() {
                 </div>
                 <div className="flex justify-between">
                   <span>LOCATION:</span>
-                  <span className="text-white">NAZRĒT, ETHIOPIA</span>
+                  <span className="text-white">ADDIS ABABA, ETHIOPIA</span>
                 </div>
                 <div className="flex justify-between">
                   <span>TECH ACCREDITATION:</span>
@@ -71,10 +64,6 @@ export default function BentoAbout() {
                       </span>
                     ))}
                   </div>
-                </div>
-
-                <div className="pt-4 mt-6 border-t border-white/5 font-mono text-[10px] text-slate-500">
-                  VERIFIED STRENGTH // PRODUCTION PROVEN
                 </div>
               </div>
             ))}
