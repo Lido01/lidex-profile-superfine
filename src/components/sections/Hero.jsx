@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 px-4 sm:px-8 text-center z-10"
+      className="relative min-h-[78vh] sm:min-h-[84vh] flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-8 text-center z-10"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         {/* Primary Role Stamp */}
