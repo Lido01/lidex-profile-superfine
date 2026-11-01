@@ -126,6 +126,7 @@ export default function Projects() {
               >
                 {/* Modal Header */}
                 <button
+                  type="button"
                   onClick={() => setActiveProject(null)}
                   className="absolute right-4 top-4 z-[220] border border-white/15 bg-[#111a35] px-2.5 py-1.5 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
                   aria-label="Close project blueprint"
