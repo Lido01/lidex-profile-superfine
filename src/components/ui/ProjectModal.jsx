@@ -46,6 +46,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         >
           {/* Close button */}
           <button
+            type="button"
             onClick={onClose}
             className="absolute right-4 top-4 z-[220] rounded-full border border-white/15 bg-[#111a35] p-2 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
             aria-label="Close modal"
