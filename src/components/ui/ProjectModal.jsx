@@ -23,7 +23,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-[200] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,18 +39,19 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[101] w-full max-w-3xl max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0b1022]/95 p-4 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
+          className="relative z-[201] w-full max-w-3xl max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0b1022]/95 p-4 pt-16 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
         >
           {/* Close button */}
-          <div className="sticky top-0 z-[110] flex justify-end -mx-4 -mt-4 px-4 py-3 sm:-mx-8 sm:-mt-8 sm:px-8 bg-[#0b1022]/95">
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="absolute right-4 top-4 z-[220] rounded-full border border-white/15 bg-[#111a35] p-2 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
+            aria-label="Close modal"
+          >
+            <X className="h-5 w-5" />
+          </button>
 
           {/* Header Banner & Visual */}
           <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10 aspect-video max-h-64 sm:max-h-80 w-full bg-slate-950">
@@ -76,7 +77,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
           {/* Titles & Summary */}
           <div className="mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+            <h2 id="project-modal-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
               {project.title}
             </h2>
             <p className="text-base  font-mono mb-4">
