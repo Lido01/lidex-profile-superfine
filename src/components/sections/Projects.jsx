@@ -105,7 +105,7 @@ export default function Projects() {
         {/* FULL PROJECT BLUEPRINT MODAL (Opens on click for complete deep dive) */}
         <AnimatePresence>
           {activeProject && (
-            <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
+            <div className="fixed inset-0 z-[200] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -119,17 +119,19 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: 15 }}
                 transition={{ duration: 0.25 }}
-                className="relative z-[101] max-w-3xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
+                className="relative z-[201] max-w-3xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 pt-16 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="project-blueprint-title"
               >
                 {/* Modal Header */}
-                <div className="sticky top-0 z-[110] flex items-center justify-end -mx-4 px-4 sm:-mx-8 sm:px-8 py-3 bg-[#050816] border-b border-white/10 mb-4 sm:mb-6">
-                  <button
-                    onClick={() => setActiveProject(null)}
-                    className="text-slate-400 hover:text-white cursor-pointer px-2.5 py-1 border border-white/15"
-                  >
-                    [ CLOSE X ]
-                  </button>
-                </div>
+                <button
+                  onClick={() => setActiveProject(null)}
+                  className="absolute right-4 top-4 z-[220] border border-white/15 bg-[#111a35] px-2.5 py-1.5 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
+                  aria-label="Close project blueprint"
+                >
+                  [ CLOSE X ]
+                </button>
 
                 {/* Modal Visual Banner */}
                 <div className="mb-6 aspect-video w-full overflow-hidden border border-white/10 bg-slate-950">
@@ -142,7 +144,7 @@ export default function Projects() {
 
                 {/* Title & Full Description */}
                 <div className="space-y-3 mb-6">
-                  <h3 className="text-white font-bold text-xl sm:text-2xl font-sans">
+                  <h3 id="project-blueprint-title" className="text-white font-bold text-xl sm:text-2xl font-sans">
                     {activeProject.title}
                   </h3>
                   <p className="font-sans text-sm text-slate-300 leading-relaxed">
