@@ -97,6 +97,38 @@ body {
   padding-top: 4.5rem !important;
 }
 
+.cv-modal-panel {
+  display: flex;
+  height: 100%;
+  max-height: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cv-modal-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.cv-modal-body iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+}
+
+@media (min-width: 640px) {
+  .modal-close {
+    top: max(1.5rem, env(safe-area-inset-top));
+    right: 1.5rem;
+  }
+
+  .modal-content-with-close {
+    padding-top: 4.5rem !important;
+  }
+}
+
 /* Keep the page scrollable without a distracting progress rail. */
 html {
   scrollbar-width: none;
