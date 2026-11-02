@@ -105,6 +105,18 @@ body {
   overflow: hidden;
 }
 
+/* The Docs preview must have the whole narrow viewport so its page can scale
+   instead of losing content behind the modal's side gutters. */
+.cv-modal-overlay {
+  padding: 0;
+}
+
+.cv-modal-panel {
+  width: 100vw;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
 .cv-modal-body {
   min-height: 0;
   flex: 1 1 auto;

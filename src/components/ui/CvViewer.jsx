@@ -3,13 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
 
 export const cvDocumentUrl = 'https://docs.google.com/document/d/198p9pyqNCeu9md2G1XWOVw7krEQI9yBh/edit?usp=sharing&ouid=101420092608424989378&rtpof=true&sd=true';
-const cvPreviewUrl = `${cvDocumentUrl}/preview`;
+const cvPreviewUrl = 'https://docs.google.com/document/d/198p9pyqNCeu9md2G1XWOVw7krEQI9yBh/preview';
 
 export default function CvViewer({ isOpen, onClose }) {
   return createPortal(
       <AnimatePresence>
         {isOpen && (
-        <div className="modal-overlay">
+        <div className="modal-overlay cv-modal-overlay">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
