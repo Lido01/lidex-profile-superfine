@@ -73,6 +73,17 @@ body {
   pointer-events: auto;
 }
 
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: calc(100dvh - max(1.5rem, env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+  flex: 0 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Keep the page scrollable without a distracting progress rail. */
 html {
   scrollbar-width: none;
