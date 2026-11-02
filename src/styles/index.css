@@ -84,6 +84,13 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.modal-close {
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: 0.75rem;
+  z-index: 2;
+}
+
 /* Keep the page scrollable without a distracting progress rail. */
 html {
   scrollbar-width: none;
