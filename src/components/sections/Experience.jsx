@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { certificationsData, experienceData, testimonialsData, personalData } from '../../data/portfolioData';
 import CvViewer from '../ui/CvViewer';
@@ -76,15 +77,16 @@ export default function Experience() {
           </div>
 
           {/* CERTIFICATE DEEP DIVE MODAL */}
-          <AnimatePresence>
+          {createPortal(
+            <AnimatePresence>
             {activeCert && (
-              <div className="fixed inset-0 z-[200] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
+              <div className="modal-overlay">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onClick={() => setActiveCert(null)}
-                  className="fixed inset-0 bg-black/85 backdrop-blur-xl"
+                  className="modal-backdrop bg-black/85 backdrop-blur-xl"
                 />
 
                 <motion.div
@@ -92,7 +94,7 @@ export default function Experience() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 15 }}
                   transition={{ duration: 0.25 }}
-                  className="relative z-[201] max-w-2xl w-full max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto bg-[#050816] border border-white/20 p-4 pt-16 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
+                  className="modal-panel modal-content-with-close max-w-2xl bg-[#050816] border border-white/20 p-4 sm:p-8 font-mono text-xs text-slate-300 shadow-2xl"
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="certificate-title"
@@ -100,7 +102,7 @@ export default function Experience() {
                   <button
                     type="button"
                     onClick={() => setActiveCert(null)}
-                    className="absolute right-4 top-4 z-[220] border border-white/15 bg-[#111a35] px-2.5 py-1.5 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
+                    className="modal-close border border-white/15 bg-[#111a35] px-2.5 py-1.5 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white"
                     aria-label="Close certificate"
                   >
                     [ CLOSE X ]
@@ -152,7 +154,9 @@ export default function Experience() {
                 </motion.div>
               </div>
             )}
-          </AnimatePresence>
+            </AnimatePresence>,
+            document.body
+          )}
         </div>
       </section>
 
@@ -289,7 +293,7 @@ export default function Experience() {
       <CvViewer isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
 
       {/* 3. PEER & COMMUNITY ENDORSEMENTS */}
-      <section id="endorsements" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
+      {/* <section id="endorsements" className="relative py-16 sm:py-20 px-4 sm:px-8 z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10 font-mono">
             <div>
@@ -326,7 +330,7 @@ export default function Experience() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
