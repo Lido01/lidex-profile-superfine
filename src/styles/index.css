@@ -49,6 +49,23 @@ body {
   min-height: 100vh;
 }
 
+/* Full-viewport dialogs must sit above the fixed navigation and respect device cutouts. */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
+    max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+  width: 100%;
+  height: 100dvh;
+  overflow: auto;
+  pointer-events: auto;
+  isolation: isolate;
+}
+
 /* Keep the page scrollable without a distracting progress rail. */
 html {
   scrollbar-width: none;
