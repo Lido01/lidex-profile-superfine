@@ -66,6 +66,13 @@ body {
   isolation: isolate;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: auto;
+}
+
 /* Keep the page scrollable without a distracting progress rail. */
 html {
   scrollbar-width: none;
