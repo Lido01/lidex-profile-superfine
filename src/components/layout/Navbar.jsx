@@ -170,9 +170,9 @@ export default function Navbar() {
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
-                    <span className="block text-[8px] text-slate-500 font-mono leading-none mb-0.5">
+                    {/* <span className="block text-[8px] text-slate-500 font-mono leading-none mb-0.5">
                       {item.index}
-                    </span>
+                    </span> */}
                     <span className="block truncate tracking-wider">
                       {item.label}
                     </span>
