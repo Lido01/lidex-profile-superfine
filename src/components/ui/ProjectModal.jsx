@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { createPortal } from 'react-dom';
 import { X, ExternalLink, CheckCircle2, Layers, Cpu, Activity } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
@@ -21,16 +22,16 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
   if (!isOpen || !project) return null;
 
-  return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-[200] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
+  return createPortal(
+      <AnimatePresence>
+        <div className="modal-overlay">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/80 backdrop-blur-xl transition-all"
+          className="modal-backdrop bg-black/80 backdrop-blur-xl transition-all"
         />
 
         {/* Modal Window */}
@@ -39,7 +40,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[201] w-full max-w-3xl max-h-[calc(100dvh-1rem)] sm:max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0b1022]/95 p-4 pt-16 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
+          className="modal-panel modal-content-with-close max-w-3xl rounded-3xl border border-white/10 bg-[#0b1022]/95 p-4 sm:p-8 shadow-2xl shadow-cyan-500/10 text-slate-100"
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-modal-title"
@@ -48,7 +49,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 z-[220] rounded-full border border-white/15 bg-[#111a35] p-2 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white sm:right-6 sm:top-6"
+            className="modal-close rounded-full border border-white/15 bg-[#111a35] p-2 text-slate-300 shadow-lg shadow-black/30 transition-colors hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-white"
             aria-label="Close modal"
           >
             <X className="h-5 w-5" />
@@ -152,7 +153,8 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             )}
           </div>
         </motion.div>
-      </div>
-    </AnimatePresence>
+        </div>
+      </AnimatePresence>,
+      document.body
   );
 }
