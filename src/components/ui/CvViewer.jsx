@@ -1,20 +1,21 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { createPortal } from 'react-dom';
 
 export const cvDocumentUrl = 'https://docs.google.com/document/d/198p9pyqNCeu9md2G1XWOVw7krEQI9yBh/edit?usp=sharing&ouid=101420092608424989378&rtpof=true&sd=true';
 const cvPreviewUrl = `${cvDocumentUrl}/preview`;
 
 export default function CvViewer({ isOpen, onClose }) {
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[200] flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-hidden">
+  return createPortal(
+      <AnimatePresence>
+        {isOpen && (
+        <div className="modal-overlay">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/85 backdrop-blur-xl"
+            className="modal-backdrop bg-black/85 backdrop-blur-xl"
           />
 
           <motion.div
@@ -22,7 +23,7 @@ export default function CvViewer({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 12 }}
             transition={{ duration: 0.22 }}
-            className="relative z-[201] flex h-[calc(100dvh-1rem)] sm:h-[min(94vh,1020px)] w-full max-w-6xl flex-col overflow-hidden border border-white/20 bg-[#050816] shadow-2xl"
+            className="modal-panel cv-modal-panel border border-white/20 bg-[#050816] shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="cv-viewer-title"
@@ -53,7 +54,7 @@ export default function CvViewer({ isOpen, onClose }) {
               </div>
             </div>
 
-            <div className="min-h-0 flex-1 overflow-hidden bg-slate-900">
+            <div className="cv-modal-body bg-slate-900">
               <iframe
                 src={cvPreviewUrl}
                 title="Lidetu Te online curriculum vitae"
@@ -63,7 +64,8 @@ export default function CvViewer({ isOpen, onClose }) {
             </div>
           </motion.div>
         </div>
-      )}
-    </AnimatePresence>
+        )}
+      </AnimatePresence>,
+      document.body
   );
 }
